@@ -1,12 +1,15 @@
 import React from 'react';
-import TodoList from './TodoList';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import mockData from '../../mockData';
+import TodoList from './TodoList';
+import mockData from '../mockData';
 
-describe('todo list test', () => {
+
+describe('todo test List', () => {
     it('should show title of todos', () => {
         render(<TodoList todos={mockData} />);
-        mockData.forEach((d) => expect(screen.getByText(d.title)).toBeInTheDocument());
+        mockData.forEach((d) => {
+            expect(screen.getByText(d.title)).toBeInTheDocument()
+        });
     });
-}); 
+});
